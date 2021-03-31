@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using POCPvaultWeb.Support;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+using POCPvaultWeb.Services;
 
 namespace POCPvaultWeb
 {
@@ -86,7 +87,8 @@ namespace POCPvaultWeb
                 };
             });
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            services.AddTransient<PEService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
