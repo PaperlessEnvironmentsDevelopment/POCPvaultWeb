@@ -4,7 +4,11 @@
 @{
     ViewData["Title"] = "Home Page";
 
-    var userName = Model.User.FirstName + " " + Model.User.LastName;
+    var username = string.Empty;
+    if(Model != null && Model.User != null)
+    {
+        userName = Model.User.FirstName + " " + Model.User.LastName;
+    }
 
 }
 
